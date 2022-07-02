@@ -1,6 +1,7 @@
 # HTML
 
 - Contents
+
   - TEXT
   - Media
     - Image, Video, Audio
@@ -12,6 +13,7 @@
 ## HTML basic
 
 - HTML : Hyper Text Markup Language
+
   - Hyper Text : 하이퍼링크로 연결된 문서 -> 웹페이지(콘텐츠,구조)
   - Markup : 표시
   - Language : 언어
@@ -20,6 +22,7 @@
   - 명칭 : Tag / Element
   - 구성 : 시작태그 ~ 종료태그
   - 종료태그가 없는 태그 : 빈태그(Empty Element)
+
 ```
 <tag> content </tag> : Element
 
@@ -29,12 +32,12 @@
 - HTML 속성(attribute)
   - HTML Element를 표시할때 필요한 추가정보 입력
   - name="value"
+
 ```
 <a href="https://www.naver.com">네이버</a>
 
 <img src="photo.jpg">
 ```
-
 
 ## HTML Basic Structure
 
@@ -87,19 +90,22 @@
 - Ol(Ordered List) : 순서있는 목록
 - li(List Item) : 목록 항목
 
-** 포함관계(Nested Structure)
+\*\* 포함관계(Nested Structure)
 
 - 태그안에 다른 태그들이 포함되는 것
 - 포함하는 요소
+
   - 조상요소(Ancestor)
   - 부모요소(Parent)
 
 - 포함되는 요소
+
   - 자식요소(Child)
   - 자손요소(Descendant)
 
 - 옆에 나란히 있는 요소
   - 형제요소(sibling)
+
 ```
 (1) <html>
 (2)   <body>
@@ -110,9 +116,10 @@
       </body>
     </html>
 ```
+
 (1) 조상 요소 | 기준 요소 | 조상 요소
 (2) 조상 요소 | 자식 요소 | 부모 요소
-(3)          | 자손 요소 | 형제 요소
+(3) | 자손 요소 | 형제 요소
 (4) 부모 요소 | 자손 요소 | 기준 요소
 (5) 기준 요소 | 자손 요소 | 자식 요소
 
@@ -137,7 +144,7 @@
 - 기본 속성 : href(hypertext reference) : 연결할 위치(웹페이지)
 
 - 링크 이동 위치
-  - 외부 링크 : 
+  - 외부 링크 :
   - 내부 링크 : Bookmark
 
 ### Media
@@ -149,6 +156,7 @@
 - 기본 속성
   - src(source) : 이미지 파일 이름, 위치
   - alt(alternate text) : 대체 텍스트 - 이미지가 화면에 표시되지 않을 때 대체해줌, screen reader와 연관
+
 ```
 <img src="photo.jpg" alt="제주도 서귀포 바닷가 배경 사진">
 ```
@@ -157,6 +165,7 @@
 
 - video, source
 - 속성
+
   - video 태그(on/off 형태 attribute)
     - controls : 동영상 제어 버튼 <!--재생,정지,볼륨 등 버튼 표시>
     - autoplay : 동영상 자동 재생
@@ -172,6 +181,86 @@
 
 ### Semantic
 
+- header
+  - logo, login ...
+- nav(navigation)
+  - menu
+- section
+  - 본문 영역
+- article
+  - 본문 영역
+- aside
+  - 본문 영역, 부수적인 컨텐츠
+- footer
+  - 연락처, 주소, 회사 이름, copyright
+
 ### Layout
+
+- Block & Inline
+  - Block 요소
+    - 태그가 브라우저에 표시될때 각 태그 영역이 새 줄에서 표시
+    - 태그 영역이 부모요소에 전체 채워짐
+  - Inline 요소
+    - 태그가 브라우저에 표시될때 각 태그 영역이 같은 줄에서 표시
+    - 태그 영역이 콘텐츠에 맞춰짐
+
+### container element
+
+- div(division)
+  - blcok
+- span
+  - inline
+
+## 경로 지정 방식
+
+- 파일 위치, 인터넷 주소(URL)
+
+- 상대 경로
+  - resource 파일을 사용하는 HTML 파일 기준
+  - html 파일 위치에 따라 주소(URL) 변경
+  - root(/) 폴더를 기준으로 주소 적용 -> root 상대 경로
+
+```
+root(/) - html1 - home.html
+        - html2 - about - about.html
+        - images - photo.jpg
+
+1) home.html -> photo.jpg
+- ../images/photo.jpg
+- /images/photo.jpg
+
+2) about.html -> photo.jpg
+- ../../images/photo.jpg
+- /images/photo.jpg
+```
+
+- 절대 경로
+  - 이미지를 표시하는 HTML 페이지가 기준이 아니고, 해당 서버가 기준
+  - 서버부터 주소(URL)를 사용하기 때문에 변동이 없음
+
+```
+www.image.com
+
+root(/) - html1 - home.html
+        - html2 - about - about.html
+        - images - photo.jpg
+
+1) home.html
+- www.image.com/images/photo.jpg
+
+2) about.html
+- www.image.com/images/photo.jpg
+```
+
+## 강조 태그, 기타 태그
+
+- 텍스트 특정 부분 강조
+  - strong : 강한 강조
+  - em(emphasize) : 일반 강조
+  - mark : html5 버전, block 강조 
+
+-  텍스트를 표현할 때 부족한 태그를 보완하는 태그
+  - i(italic)
+  - b(bold)
 
 # CSS
